@@ -1,0 +1,123 @@
+/* reset.css - Gardez votre reset intact */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles du Corps (Body) */
+body {
+    background-color: #1a1a1a; /* Gris très foncé, presque noir, pour l'ambiance de fond */
+    color: #e0e0e0; /* Texte clair par défaut pour un bon contraste */
+    font-family: 'Arial', sans-serif; /* Police moderne et lisible */
+    display: flex; /* Utilisez flexbox sur le body pour centrer le contenu principal si besoin */
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* La hauteur minimale est 100% de la fenêtre */
+    justify-content: center; /* Centre le contenu verticalement */
+}
+
+/* Titres */
+h1 {
+    text-align: center;
+    color: #ffc107; /* Jaune vif pour le titre principal, attire l'œil */
+    font-size: 2.5em; /* Augmente la taille pour qu'il soit plus percutant */
+    margin: 30px 0; /* Marge autour du titre, pas de padding pour la flexibilité */
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Petite ombre pour le relief */
+}
+
+h2 {
+    text-align: center;
+    color: #cccccc; /* Gris plus clair pour les sous-titres */
+    font-size: 1.8em; /* Ajustez la taille selon l'importance */
+    margin: 20px 0 15px 0; /* Marge supérieure, puis inférieure */
+    padding: 0; /* Pas de padding pour h2 non plus */
+}
+
+/* Conteneurs Principaux */
+.stratagem-container,
+.playground-container {
+    display: flex;
+    flex-direction: column; /* Gardez ceci si vous voulez que les éléments à l'intérieur s'empilent */
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; /* Centre horizontalement avec 'auto' */
+    padding: 25px; /* Augmentez le padding pour donner de l'espace */
+    background-color: #2b2b2b; /* Gris foncé pour les conteneurs */
+    border: 2px solid #ffc107; /* Bordure jaune distinctive */
+    border-radius: 10px; /* Bords légèrement arrondis */
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.3); /* Halo jaune subtil autour des conteneurs */
+    max-width: 90%; /* Limite la largeur pour ne pas prendre toute la page */
+    width: 600px; /* Largeur fixe ou max-width */
+}
+
+/* Div "stratagem" (où le modèle s'affiche) */
+.stratagem {
+    display: flex; /* Assurez-vous que c'est bien flex pour aligner les flèches */
+    justify-content: center; /* Centre les flèches horizontalement */
+    align-items: center; /* Centre les flèches verticalement */
+    flex-wrap: wrap; /* Permet aux flèches de passer à la ligne si l'espace est insuffisant */
+    min-height: 80px; /* Pour donner un espace minimum même sans flèche */
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #3a3a3a; /* Un gris légèrement plus clair pour le fond de la séquence */
+    border-radius: 5px;
+    border: 1px solid #555; /* Bordure subtile */
+    /* color: red; -- Supprimez ceci, les images gèrent la couleur */
+}
+
+/* Images des Flèches du Modèle (.stratagem-arrow) */
+.stratagem-arrow {
+    width: 60px;   /* Taille des flèches du modèle, ajustez selon le rendu */
+    height: auto;  /* Conserve les proportions */
+    margin: 8px;   /* Espace entre les flèches */
+    border: 2px solid #ffc107; /* Bordure jaune forte pour les faire ressortir */
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(255, 193, 7, 0.7); /* Effet lumineux jaune */
+}
+
+/* Div "playground" (où les touches du joueur s'affichent) */
+.playground-container {
+    /* Garde vos styles existants de flexbox pour centrer #playground */
+}
+
+.playground {
+    /* Garde vos styles existants de flexbox pour centrer les images des touches */
+    /* Ajoutez un padding ou un background si vous voulez donner un visuel au conteneur des touches */
+    padding: 15px;
+    background-color: #333; /* Un fond légèrement différent pour les touches */
+    border-radius: 8px;
+}
+
+/* Images des Touches du Joueur (.img) */
+.img {
+    width: 80px; /* Taille légèrement plus grande pour les touches du joueur */
+    height: auto; /* Conserve les proportions */
+    padding: 15px; /* Espace interne pour l'image dans le cadre */
+    margin: 10px; /* Espace entre les images de touches */
+    background-color: #4a4a4a; /* Fond gris légèrement plus clair pour les touches */
+    border: 2px solid #cccccc; /* Bordure grise/blanche pour les distinguer du modèle */
+    border-radius: 8px;
+    cursor: pointer; /* Indique qu'elles sont interactives */
+    transition: all 0.15s ease-in-out; /* Prépare pour des animations d'activation */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Ombre subtile */
+}
+
+/* Style pour l'état actif des touches du joueur (à ajouter via JS avec classList.add('active')) */
+.img.active {
+    border-color: #ffc107; /* Bordure jaune vif lors de l'activation */
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.8), 0 0 40px rgba(255, 193, 7, 0.4); /* Halo lumineux intense */
+    transform: scale(1.08); /* Légère augmentation de taille */
+}
+
+/* Style pour le timer et les messages si vous les ajoutez plus tard */
+#timer, #message {
+    text-align: center;
+    color: #ffeb3b; /* Jaune doux pour les informations importantes */
+    font-size: 1.5em;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+}
